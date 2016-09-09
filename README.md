@@ -1,8 +1,8 @@
 # Twilreapi::ActiveCallRouter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/twilreapi/active_call_router`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/dwilkie/twilreapi-active_call_router.svg?branch=master)](https://travis-ci.org/dwilkie/twilreapi-active_call_router)
 
-TODO: Delete this and the text above, and describe your gem
+This gem contains the default call router for [Twilreapi.](https://github.com/dwilkie/twilreapi) You can create you own call router gem and inherit from this call router to implement your own custom routing.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Checkout the [source](https://github.com/dwilkie/twilreapi-active_call_router/blob/master/lib/twilreapi/active_call_router/base.rb). `Twilreapi::ActiveCallRouter::Base` initializes with two arguments, `source` and `destination`. The method `#routing_instructions` returns a hash containing your custom routing instructions and will be sent to [Somleng](https://github.com/dwilkie/somleng). By default it just simply returns the `source` and `destination`.
 
 ## Development
 
