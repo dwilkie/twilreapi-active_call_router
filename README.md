@@ -9,16 +9,12 @@ This gem contains the default call router for [Twilreapi.](https://github.com/dw
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'twilreapi-active_call_router'
+gem 'twilreapi-active_biller', :github => "dwilkie/twilreapi-active_call_router"
 ```
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install twilreapi-active_call_router
 
 ## Usage
 
