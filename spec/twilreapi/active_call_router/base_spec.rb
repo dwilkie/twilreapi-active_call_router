@@ -1,12 +1,11 @@
 require 'spec_helper'
 
 describe Twilreapi::ActiveCallRouter::Base do
-  let(:source) { "8551777" }
-  let(:destination) { "85512234567" }
+  let(:options) { {:foo => "bar"} }
 
-  subject { described_class.new(source, destination) }
+  subject { described_class.new(options) }
 
   describe "#routing_instructions" do
-    it { expect(subject.routing_instructions).to eq({"source" => source, "destination" => destination}) }
+    it { expect(subject.routing_instructions).to eq(options) }
   end
 end

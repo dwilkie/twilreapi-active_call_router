@@ -18,7 +18,7 @@ And then execute:
 
 ## Usage
 
-Checkout the [source](https://github.com/dwilkie/twilreapi-active_call_router/blob/master/lib/twilreapi/active_call_router/base.rb). `Twilreapi::ActiveCallRouter::Base` initializes with two arguments, `source` and `destination`. The method `#routing_instructions` returns a hash containing your custom routing instructions and will be sent to [Somleng](https://github.com/dwilkie/somleng). By default it just simply returns the `source` and `destination`.
+Checkout the [source](https://github.com/dwilkie/twilreapi-active_call_router/blob/master/lib/twilreapi/active_call_router/base.rb). `Twilreapi::ActiveCallRouter::Base` initializes with a hash of options. The method `#routing_instructions` returns a hash containing your custom routing instructions and will be sent to [Somleng](https://github.com/dwilkie/somleng). By default it just simply returns the passed in options.
 
 ## Development
 

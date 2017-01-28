@@ -1,12 +1,11 @@
 class Twilreapi::ActiveCallRouter::Base
-  attr_accessor :source, :destination
+  attr_accessor :options
 
-  def initialize(source, destination)
-    self.source = source
-    self.destination = destination
+  def initialize(options = {})
+    self.options = options
   end
 
   def routing_instructions
-    {"source" => source, "destination" => destination}
+    options
   end
 end
