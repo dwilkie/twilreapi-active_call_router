@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/dwilkie/twilreapi-active_call_router.svg?branch=master)](https://travis-ci.org/dwilkie/twilreapi-active_call_router)
 
+[![Test Coverage](https://codeclimate.com/github/dwilkie/twilreapi-active_call_router/badges/coverage.svg)](https://codeclimate.com/github/dwilkie/twilreapi-active_call_router/coverage)
+
 This gem contains the default call router for [Twilreapi.](https://github.com/dwilkie/twilreapi) You can create you own call router gem and inherit from this call router to implement your own custom routing.
 
 ## Installation
