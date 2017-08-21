@@ -1,16 +1,15 @@
 # Twilreapi::ActiveCallRouter
 
-[![Build Status](https://travis-ci.org/dwilkie/twilreapi-active_call_router.svg?branch=master)](https://travis-ci.org/dwilkie/twilreapi-active_call_router)
-[![Test Coverage](https://codeclimate.com/github/dwilkie/twilreapi-active_call_router/badges/coverage.svg)](https://codeclimate.com/github/dwilkie/twilreapi-active_call_router/coverage)
+[![Build Status](https://travis-ci.org/somleng/twilreapi-active_call_router.svg?branch=master)](https://travis-ci.org/somleng/twilreapi-active_call_router)
 
-This gem contains the default call router for [Twilreapi.](https://github.com/dwilkie/twilreapi) You can create you own call router gem and inherit from this call router to implement your own custom routing.
+This gem contains the default call router for [Twilreapi.](https://github.com/somleng/twilreapi) You can create you own call router gem and inherit from this call router to implement your own custom routing.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'twilreapi-active_biller', :github => "dwilkie/twilreapi-active_call_router"
+gem 'twilreapi-active_biller', :github => "somleng/twilreapi-active_call_router"
 ```
 
 And then execute:
@@ -19,7 +18,7 @@ And then execute:
 
 ## Usage
 
-Checkout the [source](https://github.com/dwilkie/twilreapi-active_call_router/blob/master/lib/twilreapi/active_call_router/base.rb). `Twilreapi::ActiveCallRouter::Base` initializes with a hash of options. The method `#routing_instructions` returns a hash containing your custom routing instructions and will be sent to [Somleng](https://github.com/dwilkie/somleng). By default it just simply returns the passed in options.
+Checkout the [source](https://github.com/somleng/twilreapi-active_call_router/blob/master/lib/twilreapi/active_call_router/base.rb). `Twilreapi::ActiveCallRouter::Base` initializes with a hash of options. The method `#routing_instructions` returns a hash containing your custom routing instructions and will be sent to [Somleng](https://github.com/somleng/somleng). By default it just simply returns the passed in options.
 
 ## Development
 
@@ -29,7 +28,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/dwilkie/twilreapi-active_call_router.
+Bug reports and pull requests are welcome on GitHub at https://github.com/somleng/twilreapi-active_call_router.
 
 ## License
 
