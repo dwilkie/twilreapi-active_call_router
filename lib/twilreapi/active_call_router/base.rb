@@ -8,4 +8,7 @@ class Twilreapi::ActiveCallRouter::Base
   def routing_instructions
     options
   end
+
+  def normalize_from
+  end
 end
