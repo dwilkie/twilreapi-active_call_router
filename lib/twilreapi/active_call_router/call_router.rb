@@ -5,15 +5,21 @@ module Twilreapi
     class CallRouter
       DEFAULT_TRUNK_PREFIX = "0".freeze
 
-      attr_accessor :trunk_prefix, :trunk_prefix_replacement,
-                    :source_prefix, :source_prefix_replacement,
-                    :default_dial_string_format,
-                    :source, :destination
+      attr_accessor :source, :destination,
+                    :trunk_prefix, :trunk_prefix_replacement, :source_matcher
+
+      def initialize(options = {})
+        self.source = fetch_option(options, :source, fetch_env: false)
+        self.destination = fetch_option(options, :destination, fetch_env: false)
+        self.trunk_prefix = fetch_option(options, :trunk_prefix) { DEFAULT_TRUNK_PREFIX }
+        self.trunk_prefix_replacement = fetch_option(options, :trunk_prefix_replacement)
+        self.source_matcher = fetch_option(options, :source_matcher)
+      end
 
       def normalized_source
         return source if source.nil? || trunk_prefix_replacement.nil?
 
-        replace_prefix(source, trunk_prefix, trunk_prefix_replacement)
+        source.sub(/\A((\+)?#{trunk_prefix})/, "\\2#{trunk_prefix_replacement}")
       end
 
       def routing_instructions
@@ -48,16 +54,6 @@ module Twilreapi
         routing_instructions
       end
 
-      def initialize(options = {})
-        self.source = fetch_option(options, :source, fetch_env: false)
-        self.destination = fetch_option(options, :destination, fetch_env: false)
-        self.trunk_prefix = fetch_option(options, :trunk_prefix) { DEFAULT_TRUNK_PREFIX }
-        self.trunk_prefix_replacement = fetch_option(options, :trunk_prefix_replacement)
-        self.source_prefix = fetch_option(options, :source_prefix)
-        self.source_prefix_replacement = fetch_option(options, :source_prefix_replacement)
-        self.default_dial_string_format = fetch_option(options, :default_dial_string_format)
-      end
-
       private
 
       def fetch_option(hash, key, fetch_env: true)
@@ -65,13 +61,9 @@ module Twilreapi
       end
 
       def modified_source
-        return source if source.nil? || source_prefix.nil? || source_prefix_replacement.nil?
+        return source if source.nil? || source_matcher.nil?
 
-        replace_prefix(source, source_prefix, source_prefix_replacement)
-      end
-
-      def replace_prefix(original, prefix, replacement)
-        original.sub(/\A((\+)?#{prefix})/, "\\2#{replacement}")
+        source.match(Regexp.new(source_matcher))[1]
       end
 
       def fetch_gateway_config(config, key)

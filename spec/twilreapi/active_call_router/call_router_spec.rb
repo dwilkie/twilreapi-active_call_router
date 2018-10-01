@@ -34,8 +34,7 @@ describe Twilreapi::ActiveCallRouter::CallRouter do
     it "returns routing instructions" do
       call_router = described_class.new(
         source: "8551294",
-        source_prefix: "855",
-        source_prefix_replacement: ""
+        source_matcher: /(\d{4}$)/
       )
 
       # Cambodia (Smart)
@@ -75,7 +74,7 @@ describe Twilreapi::ActiveCallRouter::CallRouter do
       )
 
       # Cambodia (Metfone 1296)
-      call_router.source = "8551296"
+      call_router.source = "+85512001296"
       call_router.destination = "+855882345678"
 
       result = call_router.routing_instructions
