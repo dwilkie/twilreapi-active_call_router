@@ -191,7 +191,7 @@ describe Twilreapi::ActiveCallRouter::CallRouter do
         result,
         source: "5555",
         destination: "5582999489999",
-        dial_string_path: "external/5582999489999@187.102.153.186"
+        dial_string_path: "external/5582999489999@200.155.77.116"
       )
     end
   end
