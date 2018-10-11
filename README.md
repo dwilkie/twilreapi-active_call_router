@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/somleng/twilreapi-active_call_router.svg?branch=master)](https://travis-ci.org/somleng/twilreapi-active_call_router)
 
+## DEPRECATION NOTICE
+
+This has been merged into [Twilreapi](https://github.com/somleng/twilreapi) and is no longer maintained
+
 This gem contains the default call router for [Twilreapi.](https://github.com/somleng/twilreapi) You can create you own call router gem and inherit from this call router to implement your own custom routing.
 
 ## Installation
@@ -28,9 +32,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/somleng/twilreapi-active_call_router.
+Bug reports and pull requests are welcome on GitHub at <https://github.com/somleng/twilreapi-active_call_router>.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
